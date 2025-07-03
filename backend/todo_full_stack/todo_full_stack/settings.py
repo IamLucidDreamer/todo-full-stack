@@ -39,11 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'channels',
+    'corsheaders',
     'tasks',
 ]
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -147,3 +149,12 @@ CHANNEL_LAYERS = {
         "BACKEND": "channels.layers.InMemoryChannelLayer",
     },
 }
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",        # if your frontend runs here
+    "http://127.0.0.1:3000",
+]
+
+# Optional: If using cookies/auth sessions between frontend & backend
+CORS_ALLOW_CREDENTIALS = True
