@@ -1,0 +1,50 @@
+# =========================
+# Global (root-level)
+# =========================
+node_modules/
+*.log
+.env
+.DS_Store
+.vscode/
+*.sqlite3
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# =========================
+# Backend (Django)
+# =========================
+backend/__pycache__/
+backend/**/*.py[cod]
+backend/*.sqlite3
+backend/db.sqlite3
+backend/.env
+backend/.venv/
+backend/env/
+backend/venv/
+backend/*.log
+backend/staticfiles/
+backend/media/
+backend/*.egg-info/
+backend/.mypy_cache/
+backend/.pytest_cache/
+
+# Django migrations (optional to ignore)
+backend/**/migrations/
+!backend/**/migrations/__init__.py
+
+# =========================
+# Frontend (Next.js)
+# =========================
+frontend/.next/
+frontend/node_modules/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.turbo/
+frontend/out/
