@@ -152,9 +152,16 @@ CHANNEL_LAYERS = {
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",        # if your frontend runs here
+    "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
 
-# Optional: If using cookies/auth sessions between frontend & backend
+
 CORS_ALLOW_CREDENTIALS = True
+
+
+# settings.py
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'

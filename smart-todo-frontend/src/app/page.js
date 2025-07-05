@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import TaskCard from '../components/TaskCard';
-// import CreateTaskForm from './CreateTaskForm';
+import CreateTaskForm from '../components/AddTaskForm';
 import {fetchTasks} from '../services/task';
 import {
   connectWebSocket,
@@ -93,14 +93,12 @@ export default function TasksPage() {
       </div>
 
       {showForm && (
-        // <CreateTaskForm
-        //   onClose={() => {
-        //     setShowForm(false);
-        //     fetchTasks();
-        //   }}
-        // />
-        <>
-        </>
+        <CreateTaskForm
+          onClose={() => {
+            setShowForm(false);
+            fetchTasks();
+          }}
+        />
       )}
 
       <div className="grid md:grid-cols-3 gap-6">
